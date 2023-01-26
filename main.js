@@ -30,13 +30,10 @@ var last_position_of_x, last_position_of_y;
         ctx.strokeStyle = color;
         ctx.lineWidth = width_of_line;
         
-        
-        
-        last_position_of_x, last_position_of_y
-       
-        canvas.addEventListener("touchmove", my_touchmove);
-        Add the function lineTo() with coordinates
-        current_position_of_mouse_x, current_position_of_mouse_y
+        ctx.moveTo(last_position_of_x, last_position_of_y);
+        ctx.lineTo(current_position_of_mouse_x, current_position_of_mouse_y);
+        /*Add the function lineTo() with coordinates
+        current_position_of_mouse_x, current_position_of_mouse_y*/
        
         ctx.stroke();
         }
@@ -65,8 +62,8 @@ var last_position_of_touch_x, last_position_of_touch_y;
 var width= screen.width;
 
     new_width = screen.width - 70;
-and assign it to new_width
-new_height = screen.height -300 ;
+    new_height = screen.height -300 ;
+/*and assign it to new_width
 */
 
 if(width < 992)
@@ -108,6 +105,10 @@ function my_touchmove(e)
         current_position_of_mouse_x, current_position_of_mouse_y
         to end creation of line    
     */
+
+        ctx.moveTo(last_position_of_touch_x, last_position_of_touch_y);
+        ctx.lineTo(current_position_of_touch_x, current_position_of_touch_y);
+
     ctx.stroke();
 
     last_position_of_touch_x = current_position_of_touch_x; 
